@@ -1,0 +1,64 @@
+body{
+    background-color: hsl(0, 0%, 4%);
+    font-family: sans-serif;
+    text-align: center;
+}
+
+header{
+    text-align: start;
+}
+
+h1{
+    color: hsl(0, 14%, 99%);
+    margin: 1px;
+    margin-left: -3px;
+    font-family: "The Nautigal", cursive;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 75px;
+}
+
+h2{
+    font-family: cursive;
+    color: hsl(0, 2%, 58%);
+    margin-top: -25px;
+    margin-left: 39px;
+    font-size: 15px;
+}
+
+section{
+    margin-top: 75px;
+    font-size: 35px;
+    color: hsl(0, 14%, 99%);
+    display: grid;  
+    grid-template-columns: 1fr 1fr;
+    font-weight: bold;
+}
+
+section label {
+    grid-column: span 2;
+}
+
+section select {
+    justify-self: end;
+}
+
+section button {
+    justify-self: start;
+}
+
+section select,
+section button {
+    width: 200px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+    background-color: hsl(0, 14%, 99%);
+    color: hsl(0, 0%, 4%);
+}
+
+
+footer{
+    color: tomato;
+}
