@@ -1,101 +1,107 @@
-# Colorfly Studio — Generador de Paletas de Colores
+# ✨ Colorfly Studio — Generador de Paletas
 
-## Descripción
+Generador de paletas de colores aleatorias desarrollado con **HTML, CSS y JavaScript**.
 
-**Colorfly Studio** es una aplicación web sencilla e interactiva que permite generar paletas de colores aleatorias de forma rápida.
+La aplicación permite generar paletas de **6, 8 o 9 colores**, mostrando cada color en una tarjeta individual. Además, permite alternar entre los formatos **HEX** y **HSL**.
 
-El usuario puede elegir entre generar una paleta de **6, 8 o 9 colores**. Al presionar el botón **"Generar paleta"**, la aplicación crea colores aleatorios en formato hexadecimal y los muestra visualmente mediante tarjetas.
+## 🌐 Demo
 
-El proyecto fue desarrollado utilizando **HTML, CSS y JavaScript**, sin necesidad de frameworks externos.
-
+👉 [Probar Colorfly Studio](https://jmgc9601-pixel.github.io/Colors-Palette-by-Colorfly-Studio-M1-project-/)
 ---
 
-## Características
+## 🎨 Características
 
-* Generación aleatoria de colores.
-* Colores representados en formato hexadecimal (`#FFFFFF`).
-* Selección de paletas de:
+* Generación aleatoria de paletas de colores.
+* Selección entre paletas de:
 
-  * 6 colores.
-  * 8 colores.
-  * 9 colores.
-* Visualización de cada color mediante una tarjeta.
-* Muestra el código hexadecimal correspondiente a cada color.
-* Mensaje de confirmación después de generar una paleta.
+  * 6 colores
+  * 8 colores
+  * 9 colores
+* Visualización de los colores mediante tarjetas.
+* Visualización del código de color en formato **HEX**.
+* Conversión de HEX a **HSL**.
+* Interruptor para cambiar entre HEX y HSL.
+* Mensajes de feedback al usuario al generar una paleta o cambiar de formato.
 * Diseño responsive para dispositivos móviles.
-* Interfaz con temática oscura.
-* Estados de enfoque (`focus-visible`) para mejorar la accesibilidad mediante teclado.
-* Uso de la fuente **The Nautigal** de Google Fonts.
+* Interfaz desarrollada completamente con HTML y CSS.
+* Generación dinámica de elementos mediante JavaScript.
 
 ---
 
-## Tecnologías utilizadas
+## 🛠️ Tecnologías utilizadas
 
 ### HTML5
 
-Se utiliza para crear la estructura de la aplicación:
+Utilizado para construir la estructura semántica de la aplicación:
 
-* Encabezado.
-* Selector de cantidad de colores.
-* Botón para generar la paleta.
-* Contenedor dinámico de las tarjetas.
-* Pie de página.
+* `header`
+* `main`
+* `section`
+* `footer`
+* Formularios y controles interactivos
 
 ### CSS3
 
-Se utiliza para el diseño y presentación visual:
+Utilizado para el diseño y la adaptación responsive:
 
-* CSS Grid.
-* Diseño responsive mediante Media Queries.
-* Colores HSL.
-* Transiciones.
-* Sombras.
-* Bordes redondeados.
-* Estados `:focus-visible`.
-* Diseño adaptable para dispositivos móviles.
+* CSS Grid
+* Flexbox
+* Media Queries
+* HSL
+* Transiciones
+* Diseño responsive
+* Estilos personalizados para las tarjetas de color
 
 ### JavaScript
 
-Se utiliza para agregar la funcionalidad interactiva:
+Utilizado para toda la lógica de la aplicación:
 
-* Captura de eventos.
-* Lectura del selector de cantidad de colores.
-* Generación aleatoria de colores.
-* Creación dinámica de elementos HTML.
-* Manipulación de clases CSS.
-* Mensajes de feedback para el usuario.
+* Generación de colores aleatorios
+* Manipulación del DOM
+* Eventos `click` y `change`
+* Conversión HEX → HSL
+* Creación dinámica de tarjetas
+* Gestión del feedback visual
 
 ---
 
-## Estructura del proyecto
+## 📂 Estructura del proyecto
 
-COLORFLY-STUDIO/
+```text
+Colorfly-Studio/
 │
-├── README.md          
 ├── index.html
 │
 └── ASSETS_PALETA/
+    │
+    ├── colorfly-logo.png
+    │
     ├── CSS/
     │   └── STYLE_PALETA.css
     │
     └── JavaScript/
         └── APP_PALETA.js
+```
 
 ---
 
-## Cómo ejecutar el proyecto
+## 🚀 Instalación y ejecución
 
 No es necesario instalar dependencias ni utilizar un servidor.
 
-### 1. Descargar o clonar el proyecto
+### 1. Clonar el repositorio
 
-Descarga el proyecto en tu computadora o clona el repositorio.
+```bash
+git clone https://github.com/jmgc9601-pixel
+```
 
-### 2. Abrir el proyecto en Visual Studio Code
+### 2. Entrar en la carpeta del proyecto
 
-Abre la carpeta del proyecto desde **Visual Studio Code**.
+```bash
+cd Colorfly-Studio
+```
 
-### 3. Ejecutar `index.html`
+### 3. Abrir el proyecto
 
 Abre el archivo:
 
@@ -103,13 +109,17 @@ Abre el archivo:
 index.html
 ```
 
-Puedes ejecutarlo directamente en el navegador o utilizar una extensión como **Live Server** en Visual Studio Code.
+en cualquier navegador web moderno.
+
+También puedes utilizar una extensión como **Live Server** en Visual Studio Code para ejecutar el proyecto durante el desarrollo.
 
 ---
 
-## Funcionamiento
+## 🖌️ ¿Cómo funciona?
 
-Al iniciar la aplicación, el usuario encuentra un selector donde puede elegir el tamaño de la paleta:
+### 1. Seleccionar el tamaño
+
+El usuario puede elegir el número de colores que quiere generar:
 
 ```text
 6 Colores
@@ -117,110 +127,202 @@ Al iniciar la aplicación, el usuario encuentra un selector donde puede elegir e
 9 Colores
 ```
 
-Después de seleccionar una opción, debe presionar:
-
-**Generar paleta**
-
-JavaScript obtiene la cantidad seleccionada y genera aleatoriamente los caracteres necesarios para formar colores hexadecimales.
-
-Por ejemplo:
-
-```text
-#A4F29C
-#12BC7F
-#D84A91
-#F5C218
-```
-
-Cada color se muestra dentro de una tarjeta que contiene:
-
-1. Una zona visual con el color generado.
-2. El código hexadecimal del color.
+Al pulsar **"Generar paleta"**, JavaScript obtiene el valor seleccionado y configura dinámicamente el número de columnas de la cuadrícula.
 
 ---
 
-## Generación de colores
+### 2. Generación de colores
 
-Los colores se generan utilizando los caracteres hexadecimales:
+Los colores se generan de forma aleatoria utilizando los caracteres hexadecimales:
 
 ```text
 0123456789ABCDEF
 ```
 
-JavaScript selecciona aleatoriamente seis caracteres para construir cada código de color.
-
-La estructura resultante es:
-
-```text
-#RRGGBB
-```
+JavaScript selecciona aleatoriamente seis caracteres para construir un color HEX.
 
 Por ejemplo:
 
 ```text
-#3FA8D2
+#3FA7D6
+#E84A5F
+#21B573
 ```
 
-Cada vez que se presiona el botón se genera una nueva combinación aleatoria.
+Cada color generado se almacena en el array:
+
+```javascript
+let coloresActuales = [];
+```
+
+Esto permite conservar los colores originales aunque el usuario cambie posteriormente entre HEX y HSL.
 
 ---
 
-## Diseño Responsive
+### 3. Creación de las tarjetas
 
-El proyecto incluye adaptación para dispositivos con pantallas pequeñas.
+Cada color genera dinámicamente una tarjeta mediante JavaScript.
 
-En pantallas de hasta **600px de ancho**, las tarjetas de colores pasan a mostrarse en una sola columna.
+La estructura creada es equivalente a:
 
-Además, se reduce el tamaño del título y la altura de las zonas de color para mejorar la visualización en dispositivos móviles.
+```html
+<div class="tarjeta">
+    <div class="zona-color"></div>
+    <p>#3FA7D6</p>
+</div>
+```
 
----
-
-## Accesibilidad
-
-Se incorporaron estados `:focus-visible` para los elementos interactivos principales.
-
-Cuando el usuario navega mediante teclado, los elementos seleccionables muestran un contorno de color para facilitar su identificación.
-
-Los elementos que cuentan con este comportamiento son:
-
-* Selector de colores.
-* Botón para generar la paleta.
-* Enlace de GitHub.
+La zona superior utiliza el color generado como fondo y debajo se muestra su código correspondiente.
 
 ---
 
-## Feedback del usuario
+## 🔄 HEX y HSL
 
-Después de generar una paleta, aparece temporalmente el mensaje:
+La aplicación permite cambiar la representación del color mediante el interruptor **HSL**.
+
+Cuando está desactivado:
+
+```text
+#3FA7D6
+```
+
+Cuando está activado:
+
+```text
+hsl(198, 66%, 54%)
+```
+
+La conversión se realiza mediante la función:
+
+```javascript
+hexToHsl(hex)
+```
+
+Esta función obtiene los valores RGB del color HEX y posteriormente calcula sus valores:
+
+* Hue
+* Saturation
+* Lightness
+
+El fondo de cada tarjeta continúa utilizando el color HEX original.
+
+---
+
+## 📱 Diseño responsive
+
+El proyecto incorpora una media query para adaptar la interfaz a pantallas de hasta **600px** de ancho.
+
+En dispositivos móviles:
+
+* Las paletas pasan a una sola columna.
+* El encabezado se reorganiza verticalmente.
+* El tamaño del logo se reduce.
+* Los títulos se adaptan a pantallas pequeñas.
+* Los botones y selectores se reducen.
+* Se añade separación entre los controles.
+* Las zonas de color reducen su altura.
+* El contenido se centra.
+
+Ejemplo:
+
+```css
+@media (max-width: 600px) {
+    .container-paleta.grid-6,
+    .container-paleta.grid-8,
+    .container-paleta.grid-9 {
+        grid-template-columns: 1fr;
+    }
+}
+```
+
+---
+
+## 💬 Feedback de usuario
+
+La aplicación proporciona mensajes temporales cuando ocurre una acción.
+
+Por ejemplo:
 
 ```text
 ¡Paleta generada!
 ```
 
-El mensaje utiliza una transición de opacidad y desaparece automáticamente después de unos segundos.
+o:
+
+```text
+Formato HSL activado
+```
+
+También informa cuando se vuelve al formato HEX:
+
+```text
+Formato HEX activado
+```
+
+Estos mensajes aparecen mediante la clase CSS:
+
+```css
+.microfeedback.visible
+```
+
+y desaparecen automáticamente después de unos segundos.
 
 ---
 
-## Autor
+## ♿ Accesibilidad
+
+Se han incluido algunos detalles para mejorar la accesibilidad y navegación mediante teclado.
+
+Los elementos interactivos muestran un indicador visual cuando reciben `focus`:
+
+```css
+outline: 3px solid hsl(189, 100%, 50%);
+```
+
+Además, el mensaje de feedback utiliza:
+
+```html
+aria-live="polite"
+```
+
+para permitir que los cambios de estado puedan ser comunicados adecuadamente por tecnologías de asistencia.
+
+---
+
+## 🌐 Tipografía
+
+El título principal utiliza la fuente **The Nautigal**, cargada desde Google Fonts.
+
+La fuente se utiliza para darle una identidad visual más artística relacionada con el concepto de Colorfly Studio.
+
+---
+
+## 🔮 Posibles mejoras futuras
+
+Algunas funcionalidades que podrían incorporarse en futuras versiones:
+
+* Copiar un color al portapapeles haciendo clic sobre él.
+* Descargar una paleta como imagen.
+* Guardar paletas favoritas.
+* Generar colores a partir de una imagen.
+* Añadir más formatos como RGB, CMYK o HSL.
+* Permitir introducir manualmente un color base.
+* Generar paletas complementarias, análogas o monocromáticas.
+* Añadir un botón para bloquear colores individuales.
+* Permitir compartir una paleta mediante un enlace.
+
+---
+
+## 👨‍💻 Autor
 
 **Juan Garcia**
 
-Proyecto realizado para la **Cohorte webft78**.
+Proyecto desarrollado como parte de la formación **Cohorte WebFT78**.
 
-### GitHub
-
-Repositorio y perfil del autor:
-
-https://github.com/jmgc9601-pixel
+🔗 [GitHub](https://github.com/jmgc9601-pixel)
 
 ---
 
-## Año
+## 📄 Licencia
 
-**2026**
-
----
-
-## Licencia
-
-Este proyecto fue desarrollado con fines educativos y de aprendizaje.
+Proyecto desarrollado con fines educativos y de práctica.
