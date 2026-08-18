@@ -72,6 +72,25 @@ section button {
     text-align: center;
 }
 
+.switcher input {
+    display: none;
+}
+
+.switcher span {
+    display: inline-block;
+    padding: 12px 12px;
+    border-radius: 50%;
+    background-color: hsl(0, 0%, 20%);
+    color: hsl(0, 33%, 99%);
+    cursor: pointer;
+    font-size: medium;
+}
+
+.switcher input:checked + span {
+    background-color: hsl(143, 97%, 49%);
+    color: hsl(0, 100%, 100%);
+}
+
 .microfeedback {
     opacity: 0;
     transition: opacity 0.5s;
@@ -113,6 +132,8 @@ section button {
 .tarjeta p {
     margin: 0;
     padding: 10px;
+    white-space: nowrap;
+    justify-self: center;
 }
 
 .zona-color {
@@ -138,7 +159,7 @@ section button {
 }
 
 footer{
-    color: hsl(0, 1%, 52%);
+    color: hsl(0, 1%, 60%);
     font-size: 0.8em;
 }
 footer p {
