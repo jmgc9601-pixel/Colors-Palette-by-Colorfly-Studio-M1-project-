@@ -1,7 +1,15 @@
-body{
+body {
     background-color: hsl(0, 0%, 4%);
     font-family: sans-serif;
     text-align: center;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 header{
@@ -27,7 +35,7 @@ h2{
 }
 
 section{
-    margin-top: 75px;
+    margin-top: 55px;
     font-size: 35px;
     color: hsl(0, 14%, 99%);
     display: grid;  
@@ -42,9 +50,14 @@ section label {
 section select {
     justify-self: end;
 }
-
 section button {
     justify-self: start;
+}
+section button:focus-visible,
+section select:focus-visible,
+footer a:focus-visible {
+    outline: 3px solid hsl(189, 100%, 50%);
+    outline-offset: 3px
 }
 
 section select,
@@ -59,6 +72,71 @@ section button {
     text-align: center;
 }
 
+.microfeedback {
+    opacity: 0;
+    transition: opacity 0.5s;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.4em;
+    color: hsl(0, 2%, 58%);
+    text-align: center;
+    grid-column: span 2
+}
+
+.microfeedback.visible {
+    opacity: 1;
+}
+
+.container-paleta {
+    display: grid;
+    gap: 10px;
+}
+
+.grid-6 {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.grid-8 {
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.grid-9 {
+    grid-template-columns: repeat(9, 1fr);
+}
+
+.tarjeta {
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: hsl(0, 15%, 90%);
+    box-shadow: 3px 7px 7px hsl(0, 4%, 49%);
+}
+
+.tarjeta p {
+    margin: 0;
+    padding: 10px;
+}
+
+.zona-color {
+    height: 250px;
+}
+
+@media (max-width: 600px) {
+    .container-paleta.grid-6,
+    .container-paleta.grid-8,
+    .container-paleta.grid-9 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+     h1 {
+        font-size: 55px;
+        padding-bottom: 5px;
+     }  
+     .zona-color{
+        height: 50px;
+     }
+}
+
 footer{
     color: hsl(0, 1%, 52%);
     font-size: 0.8em;
@@ -69,14 +147,4 @@ footer p {
 }
 footer h3 {
     margin-bottom: -1px;
-}
-
-.container-paleta {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-}
-
-.zona-color {
-    height: 100px;
 }
