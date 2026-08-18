@@ -1,84 +1,103 @@
 body {
-    background-color: hsl(0, 0%, 4%);
-    font-family: sans-serif;
-    text-align: center;
-
+    margin: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+
+    background-color: hsl(0, 0%, 0%);
+    font-family: sans-serif;
+    text-align: center;
 }
 
 main {
     flex: 1;
 }
 
-header{
-    text-align: start;
+
+
+.header-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    margin-top: -15px;
 }
 
-h1{
+.titulo {
+    text-align: left;
+}
+
+h1 {
+    margin-top: -30px;
     color: hsl(0, 14%, 99%);
-    margin: 1px;
-    margin-left: -3px;
     font-family: "The Nautigal", cursive;
+    font-size: 75px;
     font-weight: 700;
     font-style: normal;
-    font-size: 75px;
 }
 
-h2{
-    font-family: cursive;
+h2 {
+    margin-top: -75px;
+    margin-left: 55px;
     color: hsl(0, 2%, 58%);
-    margin-top: -25px;
-    margin-left: 39px;
+    font-family: cursive;
     font-size: 15px;
 }
 
-section{
-    margin-top: 45px;
-    font-size: 35px;
-    color: hsl(0, 14%, 99%);
-    display: grid;  
+.logo {
+    width: 180px;
+    height: auto;
+}
+
+
+
+section {
+    margin-top: -50px;
+    display: grid;
     grid-template-columns: 1fr 1fr;
+    color: hsl(0, 14%, 99%);
+    font-size: 35px;
     font-weight: bold;
 }
 
 section label {
-    grid-column: span 2;
+    grid-column: 1 / -1;
 }
 
 section select {
     justify-self: end;
 }
+
 section button {
     justify-self: start;
 }
-section button:focus-visible,
-section select:focus-visible,
-footer a:focus-visible {
-    outline: 3px solid hsl(189, 100%, 50%);
-    outline-offset: 3px
-}
+
+
 
 section select,
 section button {
     width: 200px;
+    border: none;
     border-radius: 20px;
+    padding: 3px;
+    background-color: hsl(0, 14%, 99%);
+    color: hsl(0, 0%, 4%);
     cursor: pointer;
     font-size: 17px;
     font-weight: bold;
-    background-color: hsl(0, 14%, 99%);
-    color: hsl(0, 0%, 4%);
     text-align: center;
 }
 
+
+
 .switcher input {
-    display: none;
+    position: absolute;
+    opacity: 0;
 }
 
 .switcher span {
     display: inline-block;
-    padding: 12px 12px;
+    padding: 12px;
     border-radius: 50%;
     background-color: hsl(0, 0%, 20%);
     color: hsl(0, 33%, 99%);
@@ -91,19 +110,33 @@ section button {
     color: hsl(0, 100%, 100%);
 }
 
-.microfeedback {
-    opacity: 0;
-    transition: opacity 0.5s;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.4em;
-    color: hsl(0, 2%, 58%);
-    text-align: center;
-    grid-column: span 2
+
+
+section select:focus-visible,
+section button:focus-visible,
+footer a:focus-visible,
+.switcher input:focus-visible + span {
+    outline: 3px solid hsl(189, 100%, 50%);
+    outline-offset: 3px;
 }
 
+
+
+.microfeedback {
+    grid-column: 1 / -1;
+    margin: 0;
+    opacity: 0;
+    color: hsl(0, 2%, 58%);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.4em;
+    text-align: center;
+    transition: opacity 0.5s;
+}
 .microfeedback.visible {
     opacity: 1;
 }
+
+
 
 .container-paleta {
     display: grid;
@@ -123,8 +156,8 @@ section button {
 }
 
 .tarjeta {
-    border-radius: 15px;
     overflow: hidden;
+    border-radius: 15px;
     background-color: hsl(0, 15%, 90%);
     box-shadow: 3px 7px 7px hsl(0, 4%, 49%);
 }
@@ -133,12 +166,25 @@ section button {
     margin: 0;
     padding: 10px;
     white-space: nowrap;
-    justify-self: center;
 }
 
 .zona-color {
     height: 250px;
 }
+
+
+
+
+footer {
+    color: hsl(0, 1%, 60%);
+    font-size: 0.8em;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
 
 @media (max-width: 600px) {
     .container-paleta.grid-6,
@@ -146,22 +192,47 @@ section button {
     .container-paleta.grid-9 {
         grid-template-columns: 1fr;
     }
-}
-
-@media (max-width: 600px) {
-     h1 {
-        font-size: 55px;
+    .header-principal {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .titulo {
+        text-align: center;
+    }
+    .logo {
+        width: 130px;
+        margin-top: -13px;
+    }
+    h1 {
+        margin-top: 1px;
+        font-size: 45px;
+        padding-bottom: 2px;
+    }
+    h2 {
+        margin-top: -30px;
+        margin-left: 0;
+        font-size: 10px;
         padding-bottom: 5px;
-     }  
-     .zona-color{
+    }
+    section {
+        margin-top: 0px;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 5px;
+    }
+    section label {
+        grid-column: 1;
+    }
+    section select,
+    section button {
+        justify-self: center;
+        width: 150px;
+    }
+    .zona-color {
         height: 50px;
-     }
-}
-
-footer{
-    color: hsl(0, 1%, 60%);
-    font-size: 0.8em;
-}
-footer p {
-    margin: 0;
+    }
+    footer {
+        text-align: center;
+    }
 }
