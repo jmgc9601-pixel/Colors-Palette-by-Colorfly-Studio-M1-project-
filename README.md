@@ -6,6 +6,8 @@ La aplicación permite generar paletas de **6, 8 o 9 colores**, mostrando cada c
 
 ## 🌐 Demo
 
+El proyecto está desplegado mediante GitHub Pages.
+
 👉 [Probar Colorfly Studio](https://jmgc9601-pixel.github.io/Colors-Palette-by-Colorfly-Studio-M1-project-/)
 ---
 
@@ -17,7 +19,8 @@ La aplicación permite generar paletas de **6, 8 o 9 colores**, mostrando cada c
   * 6 colores
   * 8 colores
   * 9 colores
-* Visualización de los colores mediante tarjetas.
+* Visualización de los colores mediante tarjetas interactivas.
+* Efecto visual de elevación al pasar el cursor sobre las tarjetas.
 * Visualización del código de color en formato **HEX**.
 * Conversión de HEX a **HSL**.
 * Interruptor para cambiar entre HEX y HSL.
@@ -91,29 +94,43 @@ No es necesario instalar dependencias ni utilizar un servidor.
 
 ### 1. Clonar el repositorio
 
-```bash
-git clone https://github.com/jmgc9601-pixel
-```
+git clone https://github.com/jmgc9601-pixel/Colors-Palette-by-Colorfly-Studio-M1-project-.git
 
 ### 2. Entrar en la carpeta del proyecto
 
-```bash
-cd Colorfly-Studio
-```
+cd Colors-Palette-by-Colorfly-Studio-M1-project-
 
 ### 3. Abrir el proyecto
 
-Abre el archivo:
+Abre el archivo index.html en cualquier navegador web moderno.
 
-```text
-index.html
-```
+También puedes utilizar Live Server en Visual Studio Code durante el desarrollo.
 
-en cualquier navegador web moderno.
 
-También puedes utilizar una extensión como **Live Server** en Visual Studio Code para ejecutar el proyecto durante el desarrollo.
+## ⚙️ Decisiones técnicas
 
----
+- Se utilizó HTML, CSS y JavaScript vanilla para mantener el proyecto simple y sin dependencias externas.
+- Se eligió HEX como formato base para generar los colores.
+- Se implementó una conversión HEX → HSL para permitir alternar entre ambos formatos.
+- Se utilizó CSS Grid para adaptar dinámicamente la distribución según el tamaño de la paleta.
+- Se utilizó `aria-live="polite"` para comunicar el feedback y `:focus-visible` para mejorar la navegación mediante teclado.
+- Se incorporó `transform: translateY()` junto con transiciones CSS para proporcionar un efecto visual de elevación al interactuar con las tarjetas.
+
+
+## 🤖 Uso de IA
+
+Durante el desarrollo del proyecto se utilizó IA como herramienta de apoyo para:
+
+- Analizar la consigna y convertirla en requisitos funcionales.
+- Revisar la estructura semántica del HTML.
+- Revisar aspectos básicos de accesibilidad.
+- Analizar y mejorar la lógica JavaScript.
+- Revisar la implementación de generación de colores HSL y HEX.
+- Revisar el proyecto contra los criterios de la rúbrica.
+
+### Evidencias
+
+Se incluyen capturas de las consultas realizadas y de las recomendaciones obtenidas durante el proceso de desarrollo.
 
 ## 🖌️ ¿Cómo funciona?
 
@@ -305,7 +322,7 @@ Algunas funcionalidades que podrían incorporarse en futuras versiones:
 * Descargar una paleta como imagen.
 * Guardar paletas favoritas.
 * Generar colores a partir de una imagen.
-* Añadir más formatos como RGB, CMYK o HSL.
+* Añadir más formatos como RGB, RGBA o CMYK.
 * Permitir introducir manualmente un color base.
 * Generar paletas complementarias, análogas o monocromáticas.
 * Añadir un botón para bloquear colores individuales.

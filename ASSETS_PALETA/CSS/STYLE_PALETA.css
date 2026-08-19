@@ -160,8 +160,12 @@ footer a:focus-visible,
     border-radius: 15px;
     background-color: hsl(0, 15%, 90%);
     box-shadow: 3px 7px 7px hsl(0, 4%, 49%);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-
+.tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 3px 12px 12px hsl(0, 4%, 49%);
+}
 .tarjeta p {
     margin: 0;
     padding: 10px;
